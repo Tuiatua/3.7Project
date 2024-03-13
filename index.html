@@ -15,7 +15,6 @@
     </style>
 </head>
 <body>
-<p>Placeholder Text</p>
 <div id="inputs">
     <div class="row">
         <div>
@@ -25,7 +24,14 @@
         <button id="ent">GO</button>
     </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
 <h2>Information Bellow</h2>
+<p>Type "a" to attack</p>
+<p>When you are ready to start, type "start"</p>
 </body>
 <script>
     const txt = document.getElementById('type');
@@ -33,7 +39,37 @@
     const abv = document.getElementById('inputs');
 
     ent.addEventListener('click', function(e){
-
+        let ans = txt.value;
+        if(ready(ans) === false){
+            let no = document.createElement('p');
+            no.innerHTML = 'Invalid Inputs';
+            abv.insertAdjacentElement('beforebegin', no);
+        }if(ready(ans) === true){
+            let yes = document.createElement('p');
+            yes.innerHTML = 'Story thing';
+            abv.insertAdjacentElement('beforebegin', yes);
+        }
+        txt.value = '';
     });
+
+    function atk(a){
+        if(a === 'a'){
+            let yes = document.createElement('p');
+            yes.innerHTML = 'You attacked';
+            abv.insertAdjacentElement('beforebegin', yes);
+        }else{
+            let no = document.createElement('p');
+            no.innerHTML = 'Invalid Inputs';
+            abv.insertAdjacentElement('beforebegin', no);
+        }
+    }
+
+    function ready(s){
+        if(s === 'start'){
+            return true;
+        }else{
+            return false;
+        }
+    }
 </script>
 </html>
