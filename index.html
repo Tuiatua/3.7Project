@@ -12,6 +12,7 @@
             text-align: center;
         }
 
+
     </style>
 </head>
 <body>
@@ -31,25 +32,30 @@
 <br>
 <h2>Information Bellow</h2>
 <p>Type "a" to attack</p>
-<p>When you are ready to start, type "start"</p>
+<p>If you want to get rid of text on the screen, just click it</p>
+<p>When you are ready to start, click the "start" button</p>
+<button style="width: 100px; height: 100px; font-size: 20px" id="ready">START</button>
 </body>
 <script>
     const txt = document.getElementById('type');
     const ent = document.getElementById('ent');
     const abv = document.getElementById('inputs');
+    const start = document.getElementById('ready');
 
     ent.addEventListener('click', function(e){
         let ans = txt.value;
-        if(ready(ans) === false){
-            let no = document.createElement('p');
-            no.innerHTML = 'Invalid Inputs';
-            abv.insertAdjacentElement('beforebegin', no);
-        }if(ready(ans) === true){
-            let yes = document.createElement('p');
-            yes.innerHTML = 'Story thing';
-            abv.insertAdjacentElement('beforebegin', yes);
-        }
+        atk(ans);
         txt.value = '';
+    });
+
+    start.addEventListener('click', function(e){
+        let story = document.createElement('p');
+        story.innerHTML = "There is a giant dragon in front of you, you must hit it three types to kill it"
+        abv.insertAdjacentElement('beforebegin', story);
+        start.remove();
+        story.addEventListener('click', function(e){
+            story.remove();
+        });
     });
 
     function atk(a){
@@ -57,18 +63,16 @@
             let yes = document.createElement('p');
             yes.innerHTML = 'You attacked';
             abv.insertAdjacentElement('beforebegin', yes);
+            yes.addEventListener('click', function(e){
+                yes.remove();
+            });
         }else{
             let no = document.createElement('p');
             no.innerHTML = 'Invalid Inputs';
             abv.insertAdjacentElement('beforebegin', no);
-        }
-    }
-
-    function ready(s){
-        if(s === 'start'){
-            return true;
-        }else{
-            return false;
+            no.addEventListener('click', function(e){
+                no.remove();
+            });
         }
     }
 </script>
