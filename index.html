@@ -11,6 +11,9 @@
         *{
             text-align: center;
         }
+        .hidden{
+            display: none;
+        }
 
 
     </style>
@@ -20,9 +23,18 @@
     <div class="row">
         <div>
             <label for="type"></label>
-            <input type="text" id="type" name="type">
+            <input type="text" id="type" name="type" class="hidden">
         </div>
-        <button id="ent">GO</button>
+        <button id="ent" class="hidden">GO</button>
+        <button id="entt" class="hidden">GO</button>
+        <button id="enttt" class="hidden">GO</button>
+        <label for="opp"></label>
+        <select id="opp" class="hidden">
+            <option id="one">Because I was told to</option>
+            <option id="two">Because</option>
+            <option id="three">Because</option>
+            <option id="four">Because</option>
+        </select>
     </div>
 </div>
 <br>
@@ -31,8 +43,8 @@
 <br>
 <br>
 <h2>Information Bellow</h2>
-<p>Type "a" to attack</p>
-<p>If you want to get rid of text on the screen, just click it</p>
+<p>Type "a" to attack and type "d" to defend</p>
+<p>If you want to get rid of text on the screen, just click it (Only for the text that appear at the top of the page)</p>
 <p>When you are ready to start, click the "start" button</p>
 <button style="width: 100px; height: 100px; font-size: 20px" id="ready">START</button>
 </body>
@@ -41,27 +53,60 @@
     const ent = document.getElementById('ent');
     const abv = document.getElementById('inputs');
     const start = document.getElementById('ready');
+    const entt = document.getElementById('entt');
+    const enttt = document.getElementById('enttt');
+    const select = document.getElementById('opp');
 
     ent.addEventListener('click', function(e){
         let ans = txt.value;
         atk(ans);
+        if (ans === 'a'){
+            ent.remove();
+            entt.classList.remove("hidden");
+        }
         txt.value = '';
     });
 
+    entt.addEventListener('click', function(e){
+        let ans = txt.value;
+        def(ans);
+        if (ans !== 'd'){
+            entt.remove();
+            txt.remove();
+        }else{
+            entt.remove();
+            enttt.classList.remove("hidden");
+
+        }
+        txt.value = '';
+    });
+
+    enttt.addEventListener('click', function(e){
+        let ans = txt.value;
+        nam(ans);
+        enttt.remove();
+        txt.classList.add("hidden");
+        select.classList.remove("hidden");
+    });
+
+
+
     start.addEventListener('click', function(e){
         let story = document.createElement('p');
-        story.innerHTML = "There is a giant dragon in front of you, you must hit it three types to kill it"
+        story.innerHTML = "There is a giant dragon in front of you, you must hit it three times to kill it"
         abv.insertAdjacentElement('beforebegin', story);
         start.remove();
         story.addEventListener('click', function(e){
             story.remove();
         });
+        ent.classList.remove("hidden");
+        txt.classList.remove("hidden");
     });
 
     function atk(a){
         if(a === 'a'){
             let yes = document.createElement('p');
-            yes.innerHTML = 'You attacked';
+            yes.innerHTML = 'You attacked the dragon. you watch the dragons movements and it appears to be preparing to attack you.';
             abv.insertAdjacentElement('beforebegin', yes);
             yes.addEventListener('click', function(e){
                 yes.remove();
@@ -74,6 +119,34 @@
                 no.remove();
             });
         }
+    }
+
+    function def(d){
+        if(d === 'd'){
+            let yes = document.createElement('p');
+            yes.innerHTML = 'You successfully defended against the dragons attack. Then you hear the dragon speak, "What is your name human ?"';
+            abv.insertAdjacentElement('beforebegin', yes);
+            yes.addEventListener('click', function(e){
+                yes.remove();
+            });
+        }else{
+            let no = document.createElement('p');
+            no.innerHTML = 'You failed to defend against the dragon, you are now dead';
+            abv.insertAdjacentElement('beforebegin', no);
+            no.addEventListener('click', function(e){
+                no.remove();
+            });
+        }
+    }
+
+    function nam(n){
+        let name = document.createElement('p');
+        name.innerHTML = `So your name is ${n} huh? Tell me, why are you trying to kill me?`;
+        abv.insertAdjacentElement('beforebegin', name);
+        name.addEventListener('click', function(e){
+            name.remove();
+        })
+
     }
 </script>
 </html>
