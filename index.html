@@ -28,6 +28,7 @@
         <button id="ent" class="hidden">GO</button>
         <button id="entt" class="hidden">GO</button>
         <button id="enttt" class="hidden">GO</button>
+
         <label for="opp"></label>
         <select id="opp" class="hidden">
             <option id="one">Because I was told to</option>
@@ -35,6 +36,7 @@
             <option id="three">Because</option>
             <option id="four">Because</option>
         </select>
+        <button id="chose" class="hidden">GO</button>
     </div>
 </div>
 <br>
@@ -56,6 +58,11 @@
     const entt = document.getElementById('entt');
     const enttt = document.getElementById('enttt');
     const select = document.getElementById('opp');
+    const chose = document.getElementById('chose');
+    const one = document.getElementById('one');
+    const two = document.getElementById('two');
+    const three = document.getElementById('three');
+    const four = document.getElementById('four');
 
     ent.addEventListener('click', function(e){
         let ans = txt.value;
@@ -87,9 +94,12 @@
         enttt.remove();
         txt.classList.add("hidden");
         select.classList.remove("hidden");
+        chose.classList.remove("hidden");
     });
 
+    chose.addEventListener('click', function(e){
 
+    })
 
     start.addEventListener('click', function(e){
         let story = document.createElement('p');
@@ -141,11 +151,27 @@
 
     function nam(n){
         let name = document.createElement('p');
-        name.innerHTML = `So your name is ${n} huh? Tell me, why are you trying to kill me?`;
+        name.innerHTML = `"So your name is ${n} huh? Tell me, why are you trying to kill me?"`;
         abv.insertAdjacentElement('beforebegin', name);
         name.addEventListener('click', function(e){
             name.remove();
         })
+
+    }
+
+    function first(){
+
+    }
+
+    function second(o){
+
+    }
+
+    function third(o){
+
+    }
+
+    function fourth(o){
 
     }
 </script>
