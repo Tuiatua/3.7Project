@@ -57,12 +57,7 @@
     const start = document.getElementById('ready');
     const entt = document.getElementById('entt');
     const enttt = document.getElementById('enttt');
-    const select = document.getElementById('opp');
-    const chose = document.getElementById('chose');
-    const one = document.getElementById('one');
-    const two = document.getElementById('two');
-    const three = document.getElementById('three');
-    const four = document.getElementById('four');
+    const entttt = document.getElementById('chose');
 
     ent.addEventListener('click', function(e){
         let ans = txt.value;
@@ -92,14 +87,15 @@
         let ans = txt.value;
         nam(ans);
         enttt.remove();
-        txt.classList.add("hidden");
-        select.classList.remove("hidden");
-        chose.classList.remove("hidden");
+        entttt.classList.remove("hidden");
+        txt.value = '';
     });
 
-    chose.addEventListener('click', function(e){
-
-    })
+    entttt.addEventListener('click', function(e){
+        let ans = txt.value;
+        which(ans);
+        txt.value = '';
+    });
 
     start.addEventListener('click', function(e){
         let story = document.createElement('p');
@@ -155,24 +151,66 @@
         abv.insertAdjacentElement('beforebegin', name);
         name.addEventListener('click', function(e){
             name.remove();
-        })
-
+        });
+        let o = document.createElement('p');
+        o.innerHTML = 'Type "one" to say because your a dragon';
+        abv.insertAdjacentElement('beforebegin', o);
+        o.addEventListener('click', function(e){
+            o.remove();
+        });
+        let t = document.createElement('p');
+        t.innerHTML = 'Type "two" to say because your a dragon';
+        abv.insertAdjacentElement('beforebegin', t);
+        t.addEventListener('click', function(e){
+            t.remove();
+        });
+        let tt = document.createElement('p');
+        tt.innerHTML = 'Type "three" to say because your a dragon';
+        abv.insertAdjacentElement('beforebegin', tt);
+        tt.addEventListener('click', function(e){
+            tt.remove();
+        });
+        let f = document.createElement('p');
+        f.innerHTML = 'Type "four" to say because your a dragon';
+        abv.insertAdjacentElement('beforebegin', f);
+        f.addEventListener('click', function(e){
+            f.remove();
+        });
     }
 
-    function first(){
-
-    }
-
-    function second(o){
-
-    }
-
-    function third(o){
-
-    }
-
-    function fourth(o){
-
+    function which(o){
+        if(o === 'one'){
+            let one = document.createElement('p');
+            one.innerHTML = 'one';
+            abv.insertAdjacentElement('beforebegin', one);
+            one.addEventListener('click', function(e){
+                one.remove();
+            });
+        }
+        if(o === 'two'){
+            let one = document.createElement('p');
+            one.innerHTML = 'two';
+            abv.insertAdjacentElement('beforebegin', one);
+            one.addEventListener('click', function(e){
+                one.remove();
+            });
+        }
+        if(o === 'three'){
+            let one = document.createElement('p');
+            one.innerHTML = 'three';
+            abv.insertAdjacentElement('beforebegin', one);
+            one.addEventListener('click', function(e){
+                one.remove();
+            });
+        }
+        if(o === 'four'){
+            let one = document.createElement('p');
+            one.innerHTML = 'four';
+            abv.insertAdjacentElement('beforebegin', one);
+            one.addEventListener('click', function(e){
+                one.remove();
+            });
+        }
     }
 </script>
 </html>
