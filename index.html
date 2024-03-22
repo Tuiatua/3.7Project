@@ -28,15 +28,12 @@
         <button id="ent" class="hidden">GO</button>
         <button id="entt" class="hidden">GO</button>
         <button id="enttt" class="hidden">GO</button>
-
-        <label for="opp"></label>
-        <select id="opp" class="hidden">
-            <option id="one">Because I was told to</option>
-            <option id="two">Because</option>
-            <option id="three">Because</option>
-            <option id="four">Because</option>
-        </select>
         <button id="chose" class="hidden">GO</button>
+        <button id="one" class="hidden">GO</button>
+        <button id="two" class="hidden">GO</button>
+        <button id="twoo" class="hidden">GO</button>
+        <button id="three" class="hidden">GO</button>
+        <button id="four" class="hidden">GO</button>
     </div>
 </div>
 <br>
@@ -58,6 +55,11 @@
     const entt = document.getElementById('entt');
     const enttt = document.getElementById('enttt');
     const entttt = document.getElementById('chose');
+    const first = document.getElementById('one');
+    const second = document.getElementById('two');
+    const third = document.getElementById('three');
+    const fourth = document.getElementById('four');
+    const twoo = document.getElementById('twoo');
 
     ent.addEventListener('click', function(e){
         let ans = txt.value;
@@ -94,12 +96,89 @@
     entttt.addEventListener('click', function(e){
         let ans = txt.value;
         which(ans);
+        if(ans === 'one'){
+            first.classList.remove("hidden");
+            entttt.remove();
+        }
+        if(ans === 'two'){
+            second.classList.remove("hidden");
+            entttt.remove();
+        }
+        if(ans === 'three'){
+            third.classList.remove("hidden");
+            entttt.remove();
+        }
+        if(ans === 'four'){
+            fourth.classList.remove("hidden");
+            entttt.remove();
+        }
         txt.value = '';
+    });
+
+    first.addEventListener('click', function(e){
+        let ans = txt.value;
+        if(ans === 'a'){
+            let bruh = document.createElement('p');
+            bruh.innerHTML = 'You attempt to attack the dragon but end up burnt to a crisp. "Well that was dumb" is the last words you here.'
+            abv.insertAdjacentElement('beforebegin', bruh);
+            bruh.addEventListener('click', function(e){
+                bruh.remove();
+            });
+            first.remove();
+            txt.remove();
+        }
+        if(ans === 'd'){
+            let ok = document.createElement('p');
+            ok.innerHTML = 'You desperately try to dodge out of the way and just barely make it. '
+            abv.insertAdjacentElement('beforebegin', ok);
+            ok.addEventListener('click', function(e){
+                ok.remove();
+            });
+            first.remove();
+        }
+        txt.value = '';
+    });
+
+    second.addEventListener('click', function(e){
+        let ans = txt.value;
+        if(ans === 'r'){
+            let ok = document.createElement('p');
+            ok.innerHTML = '"Pathetic" echos as you run away. the dragon terrorises the nearby towns for years to come. thats your ending.'
+            abv.insertAdjacentElement('beforebegin', ok);
+            ok.addEventListener('click', function(e){
+                ok.remove();
+            });
+            second.remove();
+            txt.remove();
+        }
+        if(ans === 's'){
+            let ok = document.createElement('p');
+            ok.innerHTML = 'The dragon flies above you and crashes into. this is your chance to end the dragon.'
+            abv.insertAdjacentElement('beforebegin', ok);
+            ok.addEventListener('click', function(e){
+                ok.remove();
+            });
+            second.remove();
+            twoo.classList.remove("hidden");
+        }
+        txt.remove();
+    });
+
+    twoo.addEventListener('click', function(e){
+
+    });
+
+    third.addEventListener('click', function(e){
+
+    });
+
+    fourth.addEventListener('click', function(e){
+
     });
 
     start.addEventListener('click', function(e){
         let story = document.createElement('p');
-        story.innerHTML = "There is a giant dragon in front of you, you must hit it three times to kill it"
+        story.innerHTML = "There is a giant dragon in front of you, you must hit it two times to kill it"
         abv.insertAdjacentElement('beforebegin', story);
         start.remove();
         story.addEventListener('click', function(e){
@@ -153,13 +232,13 @@
             name.remove();
         });
         let o = document.createElement('p');
-        o.innerHTML = 'Type "one" to say because your a dragon';
+        o.innerHTML = 'Type "one" to say because your a dragon.';
         abv.insertAdjacentElement('beforebegin', o);
         o.addEventListener('click', function(e){
             o.remove();
         });
         let t = document.createElement('p');
-        t.innerHTML = 'Type "two" to say because your a dragon';
+        t.innerHTML = 'Type "two" to say why not?';
         abv.insertAdjacentElement('beforebegin', t);
         t.addEventListener('click', function(e){
             t.remove();
@@ -181,7 +260,7 @@
     function which(o){
         if(o === 'one'){
             let one = document.createElement('p');
-            one.innerHTML = 'one';
+            one.innerHTML = 'The dragon doesnt seem too pleased with your response and by the looks of it, it seems to be on the verge of breathing fire on you.';
             abv.insertAdjacentElement('beforebegin', one);
             one.addEventListener('click', function(e){
                 one.remove();
@@ -189,10 +268,16 @@
         }
         if(o === 'two'){
             let one = document.createElement('p');
-            one.innerHTML = 'two';
+            one.innerHTML = '"By that logic, you should not mind if i just..." the dragon catches you by surprise and smacks you across the room.';
             abv.insertAdjacentElement('beforebegin', one);
             one.addEventListener('click', function(e){
                 one.remove();
+            });
+            let onet = document.createElement('p');
+            onet.innerHTML = 'You crash into a boulder, leaving a opening in its place. You can leave now, or stay to slay the dragon. type "r" to run and type "s" to stay';
+            abv.insertAdjacentElement('beforebegin', onet);
+            onet.addEventListener('click', function(e){
+                onet.remove();
             });
         }
         if(o === 'three'){
