@@ -30,8 +30,9 @@
         <button id="enttt" class="hidden">GO</button>
         <button id="chose" class="hidden">GO</button>
         <button id="one" class="hidden">GO</button>
+        <button id="onee" class="hidden">KILL THE DRAGON</button>
         <button id="two" class="hidden">GO</button>
-        <button id="twoo" class="hidden">GO</button>
+        <button id="twoo" class="hidden">KILL THE DRAGON</button>
         <button id="three" class="hidden">GO</button>
         <button id="four" class="hidden">GO</button>
     </div>
@@ -60,6 +61,7 @@
     const third = document.getElementById('three');
     const fourth = document.getElementById('four');
     const twoo = document.getElementById('twoo');
+    const onee = document.getElementById('onee');
 
     ent.addEventListener('click', function(e){
         let ans = txt.value;
@@ -129,21 +131,33 @@
         }
         if(ans === 'd'){
             let ok = document.createElement('p');
-            ok.innerHTML = 'You desperately try to dodge out of the way and just barely make it. '
+            ok.innerHTML = 'You desperately try to dodge out of the way and just barely make it. The dragon is tired, this is you chance to kill the dragon'
             abv.insertAdjacentElement('beforebegin', ok);
             ok.addEventListener('click', function(e){
                 ok.remove();
             });
             first.remove();
+            onee.classList.remove("hidden");
+            txt.remove();
         }
         txt.value = '';
+    });
+
+    onee.addEventListener('click', function(e){
+        let ok = document.createElement('p');
+        ok.innerHTML = 'You swiftly end the dragon as its corpse collapses to the ground. you leave through the hole in the wall and are praised for slaying the dragon. the end.'
+        abv.insertAdjacentElement('beforebegin', ok);
+        ok.addEventListener('click', function(e){
+            ok.remove();
+        });
+        onee.remove();
     });
 
     second.addEventListener('click', function(e){
         let ans = txt.value;
         if(ans === 'r'){
             let ok = document.createElement('p');
-            ok.innerHTML = '"Pathetic" echos as you run away. the dragon terrorises the nearby towns for years to come. thats your ending.'
+            ok.innerHTML = '"Pathetic" echos as you run away. the dragon terrorises the nearby towns for years to come. Thats your ending.'
             abv.insertAdjacentElement('beforebegin', ok);
             ok.addEventListener('click', function(e){
                 ok.remove();
@@ -153,23 +167,30 @@
         }
         if(ans === 's'){
             let ok = document.createElement('p');
-            ok.innerHTML = 'The dragon flies above you and crashes into. this is your chance to end the dragon.'
+            ok.innerHTML = 'The dragon flies above you and crashes into you. this is your chance to end the dragon.'
             abv.insertAdjacentElement('beforebegin', ok);
             ok.addEventListener('click', function(e){
                 ok.remove();
             });
             second.remove();
             twoo.classList.remove("hidden");
+            txt.remove();
         }
         txt.remove();
     });
 
     twoo.addEventListener('click', function(e){
-
+        let last = document.createElement('p');
+        last.innerHTML = 'With your last bit of strength, you manage to strike the dragon once more and end it for good. You lay there a hero, as you vision goes to black.';
+        abv.insertAdjacentElement('beforebegin', last);
+        last.addEventListener('click', function(e){
+          last.remove();
+        });
+        twoo.remove();
     });
 
     third.addEventListener('click', function(e){
-
+        
     });
 
     fourth.addEventListener('click', function(e){
