@@ -34,6 +34,9 @@
         <button id="two" class="hidden">GO</button>
         <button id="twoo" class="hidden">KILL THE DRAGON</button>
         <button id="three" class="hidden">GO</button>
+        <button id="threee" class="hidden">GO</button>
+        <button id="threeen" class="hidden">GO</button>
+        <button id="coo" class="hidden">KILL THE DRAGON</button>
         <button id="four" class="hidden">GO</button>
     </div>
 </div>
@@ -62,6 +65,9 @@
     const fourth = document.getElementById('four');
     const twoo = document.getElementById('twoo');
     const onee = document.getElementById('onee');
+    const threee = document.getElementById('threee');
+    const threeen = document.getElementById('threeen');
+    const coo = document.getElementById('coo');
 
     ent.addEventListener('click', function(e){
         let ans = txt.value;
@@ -190,7 +196,87 @@
     });
 
     third.addEventListener('click', function(e){
-        
+        let ans = txt.value;
+        if(ans === 'y'){
+            let ok = document.createElement('p');
+            ok.innerHTML = '"Then go and do it" type "y" to say yes, type "n" to say no.'
+            abv.insertAdjacentElement('beforebegin', ok);
+            ok.addEventListener('click', function(e){
+                ok.remove();
+            });
+            third.remove();
+            threee.classList.remove("hidden");
+        }
+        if(ans === 'n'){
+            let ok = document.createElement('p');
+            ok.innerHTML = '"Then why are you following orders to kill me?" You do not understand your opposing voices, and start to think constantly and mercilessly. you only wake up from your comatose state when a rock falls on your shoulder and by the looks of it, years have pasted. The end.'
+            abv.insertAdjacentElement('beforebegin', ok);
+            ok.addEventListener('click', function(e){
+                ok.remove();
+            });
+            txt.remove();
+            third.remove();
+        }
+        txt.value = '';
+    });
+
+    threee.addEventListener('click', function(e){
+        let ans = txt.value;
+        if(ans === 'y'){
+            let ok = document.createElement('p');
+            ok.innerHTML = 'You walk away, and do not come back. there is silence for a moment, till a loud crash is heard. you are a follower not  a leader. the end.'
+            abv.insertAdjacentElement('beforebegin', ok);
+            ok.addEventListener('click', function(e){
+                ok.remove();
+            });
+            threee.remove();
+            txt.remove();
+        }
+        if(ans === 'n'){
+            let ok = document.createElement('p');
+            ok.innerHTML = '"Why are you being so difficult?" the dragon says. You respond "I am a leader not a follower." the dragon is fed up with your behavior and scratches out at you.'
+            abv.insertAdjacentElement('beforebegin', ok);
+            ok.addEventListener('click', function(e){
+                ok.remove();
+            });
+            threee.remove();
+            threeen.classList.remove("hidden");
+        }
+        txt.value = '';
+    });
+
+    threeen.addEventListener('click', function(e){
+        let ans = txt.value;
+        if(ans === 'd'){
+            let ok = document.createElement('p');
+            ok.innerHTML = 'You parry the dragons attack and dodge inwards straight into the dragon. The dragon is in a daze, this is you chance to end the dragon.'
+            abv.insertAdjacentElement('beforebegin', ok);
+            ok.addEventListener('click', function(e){
+                ok.remove();
+            });
+            threeen.remove();
+            coo.classList.remove("hidden");
+            txt.remove();
+        }else{
+            let ok = document.createElement('p');
+            ok.innerHTML = 'The dragon slices you and you fall to the ground. "That is the fate that annoying people get" the dragon echos as you take your last breath. you try to utter the word "no", but you die. the end.'
+            abv.insertAdjacentElement('beforebegin', ok);
+            ok.addEventListener('click', function(e){
+                ok.remove();
+            });
+            txt.remove();
+            threeen.remove();
+        }
+    });
+
+    coo.addEventListener('click', function(e){
+        let ok = document.createElement('p');
+        ok.innerHTML = 'You strike at the dragon and kill it. you walk atop its corpse and stand a hero. You are praised as someone who should not be messed with. the end'
+        abv.insertAdjacentElement('beforebegin', ok);
+        ok.addEventListener('click', function(e){
+            ok.remove();
+        });
+        coo.remove();
     });
 
     fourth.addEventListener('click', function(e){
@@ -265,13 +351,13 @@
             t.remove();
         });
         let tt = document.createElement('p');
-        tt.innerHTML = 'Type "three" to say I am a thermite bomb and I am heat seeking.';
+        tt.innerHTML = 'Type "three" to say I do what im told to do the first time.';
         abv.insertAdjacentElement('beforebegin', tt);
         tt.addEventListener('click', function(e){
             tt.remove();
         });
         let f = document.createElement('p');
-        f.innerHTML = 'Type "four" to say because your a dragon';
+        f.innerHTML = 'Type "four" to say only one of us are walking away alive, and its going to be me.';
         abv.insertAdjacentElement('beforebegin', f);
         f.addEventListener('click', function(e){
             f.remove();
@@ -303,7 +389,7 @@
         }
         if(o === 'three'){
             let one = document.createElement('p');
-            one.innerHTML = '"What?" the dragon responds. type "f" to implode on the dragon. type "e" to ';
+            one.innerHTML = '"If somebody asked you to jump of a cliff, would you?" type "y" to say yes, type "n" to say no.';
             abv.insertAdjacentElement('beforebegin', one);
             one.addEventListener('click', function(e){
                 one.remove();
@@ -311,7 +397,7 @@
         }
         if(o === 'four'){
             let one = document.createElement('p');
-            one.innerHTML = 'four';
+            one.innerHTML = '"Do you really think that?" ';
             abv.insertAdjacentElement('beforebegin', one);
             one.addEventListener('click', function(e){
                 one.remove();
