@@ -280,7 +280,25 @@
     });
 
     fourth.addEventListener('click', function(e){
-
+        let ans = txt.value;
+        if(ans === 'd'){
+            let ok = document.createElement('p');
+            ok.innerHTML = 'You defend against the dragon. the dragon attacks you again';
+            abv.insertAdjacentElement('beforebegin', ok);
+            ok.addEventListener('click', function(e){
+                ok.remove();
+            });
+        }else{
+            let ok = document.createElement('p');
+            ok.innerHTML = 'The dragon kills you as you failed to defend against its attacks. the end.'
+            abv.insertAdjacentElement('beforebegin', ok);
+            ok.addEventListener('click', function(e){
+                ok.remove();
+            });
+            txt.remove();
+            fourth.remove();
+        }
+        txt.value = ''
     });
 
     start.addEventListener('click', function(e){
@@ -357,7 +375,7 @@
             tt.remove();
         });
         let f = document.createElement('p');
-        f.innerHTML = 'Type "four" to say only one of us are walking away alive, and its going to be me.';
+        f.innerHTML = 'Type "four" to say nothing.';
         abv.insertAdjacentElement('beforebegin', f);
         f.addEventListener('click', function(e){
             f.remove();
@@ -397,7 +415,7 @@
         }
         if(o === 'four'){
             let one = document.createElement('p');
-            one.innerHTML = '"Do you really think that?" ';
+            one.innerHTML = 'The dragon attacks at you.';
             abv.insertAdjacentElement('beforebegin', one);
             one.addEventListener('click', function(e){
                 one.remove();
