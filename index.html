@@ -69,7 +69,7 @@
     const threeen = document.getElementById('threeen');
     const coo = document.getElementById('coo');
 
-    ent.addEventListener('click', function(e){
+    ent.addEventListener('click', function(){
         let ans = txt.value;
         atk(ans);
         if (ans === 'a'){
@@ -79,7 +79,7 @@
         txt.value = '';
     });
 
-    entt.addEventListener('click', function(e){
+    entt.addEventListener('click', function(){
         let ans = txt.value;
         def(ans);
         if (ans !== 'd'){
@@ -93,7 +93,7 @@
         txt.value = '';
     });
 
-    enttt.addEventListener('click', function(e){
+    enttt.addEventListener('click', function(){
         let ans = txt.value;
         nam(ans);
         enttt.remove();
@@ -101,7 +101,7 @@
         txt.value = '';
     });
 
-    entttt.addEventListener('click', function(e){
+    entttt.addEventListener('click', function(){
         let ans = txt.value;
         which(ans);
         if(ans === 'one'){
@@ -123,13 +123,13 @@
         txt.value = '';
     });
 
-    first.addEventListener('click', function(e){
+    first.addEventListener('click', function(){
         let ans = txt.value;
         if(ans === 'a'){
             let bruh = document.createElement('p');
             bruh.innerHTML = 'You attempt to attack the dragon but end up burnt to a crisp. "Well that was dumb" is the last words you here.'
             abv.insertAdjacentElement('beforebegin', bruh);
-            bruh.addEventListener('click', function(e){
+            bruh.addEventListener('click', function(){
                 bruh.remove();
             });
             first.remove();
@@ -139,7 +139,7 @@
             let ok = document.createElement('p');
             ok.innerHTML = 'You desperately try to dodge out of the way and just barely make it. The dragon is tired, this is you chance to kill the dragon'
             abv.insertAdjacentElement('beforebegin', ok);
-            ok.addEventListener('click', function(e){
+            ok.addEventListener('click', function(){
                 ok.remove();
             });
             first.remove();
@@ -149,23 +149,23 @@
         txt.value = '';
     });
 
-    onee.addEventListener('click', function(e){
+    onee.addEventListener('click', function(){
         let ok = document.createElement('p');
         ok.innerHTML = 'You swiftly end the dragon as its corpse collapses to the ground. you leave through the hole in the wall and are praised for slaying the dragon. the end.'
         abv.insertAdjacentElement('beforebegin', ok);
-        ok.addEventListener('click', function(e){
+        ok.addEventListener('click', function(){
             ok.remove();
         });
         onee.remove();
     });
 
-    second.addEventListener('click', function(e){
+    second.addEventListener('click', function(){
         let ans = txt.value;
         if(ans === 'r'){
             let ok = document.createElement('p');
             ok.innerHTML = '"Pathetic" echos as you run away. the dragon terrorises the nearby towns for years to come. Thats your ending.'
             abv.insertAdjacentElement('beforebegin', ok);
-            ok.addEventListener('click', function(e){
+            ok.addEventListener('click', function(){
                 ok.remove();
             });
             second.remove();
@@ -175,7 +175,7 @@
             let ok = document.createElement('p');
             ok.innerHTML = 'The dragon flies above you and crashes into you. this is your chance to end the dragon.'
             abv.insertAdjacentElement('beforebegin', ok);
-            ok.addEventListener('click', function(e){
+            ok.addEventListener('click', function(){
                 ok.remove();
             });
             second.remove();
@@ -185,23 +185,23 @@
         txt.remove();
     });
 
-    twoo.addEventListener('click', function(e){
+    twoo.addEventListener('click', function(){
         let last = document.createElement('p');
         last.innerHTML = 'With your last bit of strength, you manage to strike the dragon once more and end it for good. You lay there a hero, as you vision goes to black.';
         abv.insertAdjacentElement('beforebegin', last);
-        last.addEventListener('click', function(e){
+        last.addEventListener('click', function(){
           last.remove();
         });
         twoo.remove();
     });
 
-    third.addEventListener('click', function(e){
+    third.addEventListener('click', function(){
         let ans = txt.value;
         if(ans === 'y'){
             let ok = document.createElement('p');
             ok.innerHTML = '"Then go and do it" type "y" to say yes, type "n" to say no.'
             abv.insertAdjacentElement('beforebegin', ok);
-            ok.addEventListener('click', function(e){
+            ok.addEventListener('click', function(){
                 ok.remove();
             });
             third.remove();
@@ -211,7 +211,7 @@
             let ok = document.createElement('p');
             ok.innerHTML = '"Then why are you following orders to kill me?" You do not understand your opposing voices, and start to think constantly and mercilessly. you only wake up from your comatose state when a rock falls on your shoulder and by the looks of it, years have pasted. The end.'
             abv.insertAdjacentElement('beforebegin', ok);
-            ok.addEventListener('click', function(e){
+            ok.addEventListener('click', function(){
                 ok.remove();
             });
             txt.remove();
@@ -220,13 +220,13 @@
         txt.value = '';
     });
 
-    threee.addEventListener('click', function(e){
+    threee.addEventListener('click', function(){
         let ans = txt.value;
         if(ans === 'y'){
             let ok = document.createElement('p');
             ok.innerHTML = 'You walk away, and do not come back. there is silence for a moment, till a loud crash is heard. you are a follower not  a leader. the end.'
             abv.insertAdjacentElement('beforebegin', ok);
-            ok.addEventListener('click', function(e){
+            ok.addEventListener('click', function(){
                 ok.remove();
             });
             threee.remove();
@@ -236,7 +236,7 @@
             let ok = document.createElement('p');
             ok.innerHTML = '"Why are you being so difficult?" the dragon says. You respond "I am a leader not a follower." the dragon is fed up with your behavior and scratches out at you.'
             abv.insertAdjacentElement('beforebegin', ok);
-            ok.addEventListener('click', function(e){
+            ok.addEventListener('click', function(){
                 ok.remove();
             });
             threee.remove();
@@ -245,13 +245,13 @@
         txt.value = '';
     });
 
-    threeen.addEventListener('click', function(e){
+    threeen.addEventListener('click', function(){
         let ans = txt.value;
         if(ans === 'd'){
             let ok = document.createElement('p');
             ok.innerHTML = 'You parry the dragons attack and dodge inwards straight into the dragon. The dragon is in a daze, this is you chance to end the dragon.'
             abv.insertAdjacentElement('beforebegin', ok);
-            ok.addEventListener('click', function(e){
+            ok.addEventListener('click', function(){
                 ok.remove();
             });
             threeen.remove();
@@ -261,7 +261,7 @@
             let ok = document.createElement('p');
             ok.innerHTML = 'The dragon slices you and you fall to the ground. "That is the fate that annoying people get" the dragon echos as you take your last breath. you try to utter the word "no", but you die. the end.'
             abv.insertAdjacentElement('beforebegin', ok);
-            ok.addEventListener('click', function(e){
+            ok.addEventListener('click', function(){
                 ok.remove();
             });
             txt.remove();
@@ -269,30 +269,30 @@
         }
     });
 
-    coo.addEventListener('click', function(e){
+    coo.addEventListener('click', function(){
         let ok = document.createElement('p');
         ok.innerHTML = 'You strike at the dragon and kill it. you walk atop its corpse and stand a hero. You are praised as someone who should not be messed with. the end'
         abv.insertAdjacentElement('beforebegin', ok);
-        ok.addEventListener('click', function(e){
+        ok.addEventListener('click', function(){
             ok.remove();
         });
         coo.remove();
     });
 
-    fourth.addEventListener('click', function(e){
+    fourth.addEventListener('click', function(){
         let ans = txt.value;
         if(ans === 'd'){
             let ok = document.createElement('p');
             ok.innerHTML = 'You defend against the dragon. the dragon attacks you again';
             abv.insertAdjacentElement('beforebegin', ok);
-            ok.addEventListener('click', function(e){
+            ok.addEventListener('click', function(){
                 ok.remove();
             });
         }else{
             let ok = document.createElement('p');
             ok.innerHTML = 'The dragon kills you as you failed to defend against its attacks. the end.'
             abv.insertAdjacentElement('beforebegin', ok);
-            ok.addEventListener('click', function(e){
+            ok.addEventListener('click', function(){
                 ok.remove();
             });
             txt.remove();
@@ -301,12 +301,12 @@
         txt.value = ''
     });
 
-    start.addEventListener('click', function(e){
+    start.addEventListener('click', function(){
         let story = document.createElement('p');
         story.innerHTML = "There is a giant dragon in front of you, you must hit it two times to kill it"
         abv.insertAdjacentElement('beforebegin', story);
         start.remove();
-        story.addEventListener('click', function(e){
+        story.addEventListener('click', function(){
             story.remove();
         });
         ent.classList.remove("hidden");
@@ -318,14 +318,14 @@
             let yes = document.createElement('p');
             yes.innerHTML = 'You attacked the dragon. you watch the dragons movements and it appears to be preparing to attack you.';
             abv.insertAdjacentElement('beforebegin', yes);
-            yes.addEventListener('click', function(e){
+            yes.addEventListener('click', function(){
                 yes.remove();
             });
         }else{
             let no = document.createElement('p');
             no.innerHTML = 'Invalid Inputs';
             abv.insertAdjacentElement('beforebegin', no);
-            no.addEventListener('click', function(e){
+            no.addEventListener('click', function(){
                 no.remove();
             });
         }
@@ -336,14 +336,14 @@
             let yes = document.createElement('p');
             yes.innerHTML = 'You successfully defended against the dragons attack. Then you hear the dragon speak, "What is your name human ?"';
             abv.insertAdjacentElement('beforebegin', yes);
-            yes.addEventListener('click', function(e){
+            yes.addEventListener('click', function(){
                 yes.remove();
             });
         }else{
             let no = document.createElement('p');
             no.innerHTML = 'You failed to defend against the dragon, you are now dead';
             abv.insertAdjacentElement('beforebegin', no);
-            no.addEventListener('click', function(e){
+            no.addEventListener('click', function(){
                 no.remove();
             });
         }
@@ -353,31 +353,31 @@
         let name = document.createElement('p');
         name.innerHTML = `"So your name is ${n} huh? Tell me, why are you trying to kill me?"`;
         abv.insertAdjacentElement('beforebegin', name);
-        name.addEventListener('click', function(e){
+        name.addEventListener('click', function(){
             name.remove();
         });
         let o = document.createElement('p');
         o.innerHTML = 'Type "one" to say because your a dragon.';
         abv.insertAdjacentElement('beforebegin', o);
-        o.addEventListener('click', function(e){
+        o.addEventListener('click', function(){
             o.remove();
         });
         let t = document.createElement('p');
         t.innerHTML = 'Type "two" to say why not?';
         abv.insertAdjacentElement('beforebegin', t);
-        t.addEventListener('click', function(e){
+        t.addEventListener('click', function(){
             t.remove();
         });
         let tt = document.createElement('p');
         tt.innerHTML = 'Type "three" to say I do what im told to do the first time.';
         abv.insertAdjacentElement('beforebegin', tt);
-        tt.addEventListener('click', function(e){
+        tt.addEventListener('click', function(){
             tt.remove();
         });
         let f = document.createElement('p');
         f.innerHTML = 'Type "four" to say nothing.';
         abv.insertAdjacentElement('beforebegin', f);
-        f.addEventListener('click', function(e){
+        f.addEventListener('click', function(){
             f.remove();
         });
     }
@@ -387,7 +387,7 @@
             let one = document.createElement('p');
             one.innerHTML = 'The dragon doesnt seem too pleased with your response and by the looks of it, it seems to be on the verge of breathing fire on you.';
             abv.insertAdjacentElement('beforebegin', one);
-            one.addEventListener('click', function(e){
+            one.addEventListener('click', function(){
                 one.remove();
             });
         }
@@ -395,13 +395,13 @@
             let one = document.createElement('p');
             one.innerHTML = '"By that logic, you should not mind if i just..." the dragon catches you by surprise and smacks you across the room.';
             abv.insertAdjacentElement('beforebegin', one);
-            one.addEventListener('click', function(e){
+            one.addEventListener('click', function(){
                 one.remove();
             });
             let onet = document.createElement('p');
             onet.innerHTML = 'You crash into a boulder, leaving a opening in its place. You can leave now, or stay to slay the dragon. type "r" to run and type "s" to stay';
             abv.insertAdjacentElement('beforebegin', onet);
-            onet.addEventListener('click', function(e){
+            onet.addEventListener('click', function(){
                 onet.remove();
             });
         }
@@ -409,7 +409,7 @@
             let one = document.createElement('p');
             one.innerHTML = '"If somebody asked you to jump of a cliff, would you?" type "y" to say yes, type "n" to say no.';
             abv.insertAdjacentElement('beforebegin', one);
-            one.addEventListener('click', function(e){
+            one.addEventListener('click', function(){
                 one.remove();
             });
         }
@@ -417,7 +417,7 @@
             let one = document.createElement('p');
             one.innerHTML = 'The dragon attacks at you.';
             abv.insertAdjacentElement('beforebegin', one);
-            one.addEventListener('click', function(e){
+            one.addEventListener('click', function(){
                 one.remove();
             });
         }
